@@ -125,13 +125,13 @@ def bayesAlgorithm(trainPath, testPath):
 if __name__ == "__main__":
 
     # 分词，第一个是分词输入，第二个参数是结果保存的路径
-    segText("C:/Users/yflin/Desktop/dataset/train_corpus/","C:/Users/yflin/Desktop/dataset/train_corpus_seg/")
-    bunchSave("C:/Users/yflin/Desktop/dataset/train_corpus_seg/", "C:/Users/yflin/Desktop/dataset/train_word_bag/train_set.dat")  # 输入分词，输出分词向量
-    stopWordList = getStopWord("C:/Users/yflin/Desktop/dataset/train_word_bag/stop_words.txt")  # 获取停用词
-    getTFIDFMat("C:/Users/yflin/Desktop/dataset/train_word_bag/train_set.dat", stopWordList, "C:/Users/yflin/Desktop/dataset/train_word_bag/tfdifspace.dat")  # 输入词向量，输出特征空间
+    segText("./dataset/train_corpus/","./dataset/train_corpus_seg/")
+    bunchSave("./dataset/train_corpus_seg/", "./dataset/train_word_bag/train_set.dat")  # 输入分词，输出分词向量
+    stopWordList = getStopWord("./dataset/train_word_bag/stop_words.txt")  # 获取停用词
+    getTFIDFMat("./dataset/train_word_bag/train_set.dat", stopWordList, "./dataset/train_word_bag/tfdifspace.dat")  # 输入词向量，输出特征空间
  
     # 训练集
-    segText("C:/Users/yflin/Desktop/dataset/test_corpus/", "C:/Users/yflin/Desktop/dataset/test_corpus_seg/")  # 分词
-    bunchSave("C:/Users/yflin/Desktop/dataset/test_corpus_seg/", "C:/Users/yflin/Desktop/dataset/test_word_bag/test_set.dat")
-    getTestSpace("C:/Users/yflin/Desktop/dataset/test_word_bag/test_set.dat", "C:/Users/yflin/Desktop/dataset/train_word_bag/tfdifspace.dat", stopWordList, "C:/Users/yflin/Desktop/dataset/test_word_bag/testspace.dat")
-    bayesAlgorithm("C:/Users/yflin/Desktop/dataset/train_word_bag/tfdifspace.dat", "C:/Users/yflin/Desktop/dataset/test_word_bag/testspace.dat")
+    segText("./dataset/test_corpus/", "./dataset/test_corpus_seg/")  # 分词
+    bunchSave("./dataset/test_corpus_seg/", "./dataset/test_word_bag/test_set.dat")
+    getTestSpace("./dataset/test_word_bag/test_set.dat", "./dataset/train_word_bag/tfdifspace.dat", stopWordList, "./dataset/test_word_bag/testspace.dat")
+    bayesAlgorithm("./dataset/train_word_bag/tfdifspace.dat", "./dataset/test_word_bag/testspace.dat")
