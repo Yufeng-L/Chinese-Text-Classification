@@ -8,12 +8,12 @@ Example:<br/>
 
 ## 1.需要的包
 
-1.jieba <br/>
+#### jieba 
 用于中文文本数据的预处理：分词
 ```python
 pip install jieba
 ```
-2.scikit-learn <br/>
+#### scikit-learn <br/>
 scikit-learn是一个开源基于python的机器学习工具
 ```python
 pip install -U scikit-learn
