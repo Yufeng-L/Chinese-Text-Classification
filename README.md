@@ -1,4 +1,4 @@
-# Chinese-Text-Classification 中文文本分类
+# 中文文本分类 Chinese-Text-Classification 
 
 对有 __特征性__ 的中文数据进行分类。<br/>
 Example:<br/>
@@ -6,18 +6,19 @@ Example:<br/>
 1.地址数据的特征(省，市，区，路...) <br/>
 2.公司名的特征（有限，集团，公司...) <br/>
 
-## 需要的包
-1. jieiba 用于中文文本数据的预处理：分词
+## 1.需要的包
+1. jieiba <br/>
+用于中文文本数据的预处理：分词
 ```python
 pip install jieba
 ```
-2. sklearn 调用了其中的方法 如 Naive bayes
+2. scikit-learn <br/>
+scikit-learn是一个开源基于python的机器学习工具
 ```python
 pip install -U scikit-learn
  ```
 
-
-## 预先分类
+## 2.对训练集预先分类
 针对数据的中文属性做文本分类训练，对中文数据输入能预测出类别。 <br/>
 开始之前，我们预先把想要预测的大类分好，如下:
 
@@ -29,16 +30,16 @@ pip install -U scikit-learn
 
 -----
 
-## 分类原理
+## 3.实现原理
 对训练集和测试集的数据进行分词处理后，要把他们变成数据。我们采用了scikit-learn库中的Bunch数据结构来表示这两个数据集。<br/>
 对于Bunch的通俗讲解，类似于python中的字典，也是key对应value的类型，比如dict[key]就是字典中key的值. 
 ### 创建Bunch对象：
 ----
 我们在Bunch对象里面创建了有4个成员： <br/>
-target_name：是一个list，存放的是整个数据集的类别集合。（就是C1,C2,C3）<br/>
-label：是一个list，存放的是所有文本的标签。<br/>
-filenames：是一个list，存放的是所有文本文件的名字。<br/>
-contents：是一个list，分词后文本文件（一个文本文件只有一行）<br/>
+- target_name：是一个list，存放的是整个数据集的类别集合。（就是C1,C2,C3）<br/>
+- label：是一个list，存放的是所有文本的标签。<br/>
+- filenames：是一个list，存放的是所有文本文件的名字。<br/>
+- contents：是一个list，分词后文本文件（一个文本文件只有一行）<br/>
 绑定了Bunch的数据类型后，实现了数据集的变量表示。<br/>
 下一步我们需要创建词向量，词向量简单来说就是将单词映射到向量空间，用向量表示。<br/>
 我们要把我们要训练的词都统一放到一个向量空间里面。<br/>
