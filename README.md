@@ -63,6 +63,17 @@ CountVectorizer类会将文本中的词语转换为词频矩阵，例如矩阵�
 做这些工作之前，我们首先要把测试数据也映射到上面这个TF-IDF词向量空间中，也就是说，测试集和训练集处在同一个词向量空间，只不过测试集有自己的权重tdm，与训练集（train_word_bag/tfdifspace.dat）中的tdm不同而已。<br/>
 由于我们使用词的出现次数作为特征，可以用多项分布来描述这一特征。在sklearn中使用sklearn.naive_bayes模块的MultinomialNB类来构建分类器。
 
+## 4.分类样例输出
+该分类运行在windows系统，下图是文本分类的样例输出：<br/>
+[!sampleout](https://github.com/Yufeng-L/Chinese-Text-Classification/blob/master/result/sampleout.png)
+
+## 5.txt文件编码事项
+txt文本理论应使用 __UTF-8__ 编码，windows下本人为训练集和测试集均为在ASCII编码下运行无误，但是在linux下数据集显示乱码，关于对编码的详细信息后续会探索并更新。
+
+
+
+
+
 
 
 
