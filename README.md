@@ -65,7 +65,7 @@ CountVectorizer类会将文本中的词语转换为词频矩阵，例如矩阵�
 
 ## 4.分类样例输出
 该分类运行在windows系统，下图是文本分类的样例输出：<br/>
-[!sampleout](https://github.com/Yufeng-L/Chinese-Text-Classification/blob/master/result/sampleout.png)
+![sampleout](https://github.com/Yufeng-L/Chinese-Text-Classification/blob/master/result/sampleout.png)
 
 ## 5.txt文件编码事项
 txt文本理论应使用 __UTF-8__ 编码，windows下本人为训练集和测试集均为在ASCII编码下运行无误，但是在linux下数据集显示乱码，关于对编码的详细信息后续会探索并更新。
